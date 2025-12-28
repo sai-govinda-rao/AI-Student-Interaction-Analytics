@@ -4,6 +4,7 @@ import numpy as np
 import joblib
 import matplotlib.pyplot as plt
 import seaborn as sns
+from pathlib import Path
 
 
 # --------------------------------------------------
@@ -20,15 +21,17 @@ st.set_page_config(
 # --------------------------------------------------
 @st.cache_data
 def load_data():
-    return pd.read_csv("../Data/ai_assistant_usage_student_life.csv")
+    BASE_DIR = Path(__file__).resolve().parent.parent
+    return pd.read_csv(f"{BASE_DIR}/Data/ai_assistant_usage_student_life.csv")
 
 @st.cache_resource
 def load_models():
+    BASE_DIR = Path(__file__).resolve().parent.parent
     models = {
-        "Logistic Regression": joblib.load("../Models/logistic_regression.pkl"),
-        "Random Forest": joblib.load("../Models/random_forest.pkl"),
-        "Naive Bayes": joblib.load("../Models/naive_bayes.pkl"),
-        "Decision Tree": joblib.load("../Models/decision_tree.pkl")
+        "Logistic Regression": joblib.load(f"{BASE_DIR}/Models/logistic_regression.pkl"),
+        "Random Forest": joblib.load(f"{BASE_DIR}/Models/random_forest.pkl"),
+        "Naive Bayes": joblib.load(f"{BASE_DIR}/Models/naive_bayes.pkl"),
+        "Decision Tree": joblib.load(f"{BASE_DIR}/Models/decision_tree.pkl")
     }
     return models
 
