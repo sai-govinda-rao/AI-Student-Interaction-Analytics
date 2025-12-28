@@ -491,5 +491,5 @@ elif menu == "👨‍💻 About Project":
         st.link_button("💼 LinkedIn", "https://www.linkedin.com/in/kornu-sai-govinda-rao-b077a9286/")
 
     with col2:
-        st.link_button("📂 GitHub", "https://github.com/sai-govinda-rao")
+        st.link_button("📂 GitHub", "https://github.com/sai-govinda-rao/AI-Student-Interaction-Analytics")
 
